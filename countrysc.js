@@ -31,7 +31,11 @@ async function fetchcountry() {
                 subName.innerHTML = `${d.subregion}`
             }
             capName.innerHTML = `${d.capital}`
-            topName.innerHTML = `${d.tld[0]}`
+            if (d.tld) {
+                topName.innerHTML = `${d.tld[0]}`
+            } else {
+                topName.innerHTML = `None`
+            }
             curName.innerHTML = `${Object.values(d.currencies)[0].name}`
             langName.innerHTML = `${Object.values(d.languages).join(', ')}`
 
